@@ -1,0 +1,43 @@
+###规范
+#使用RESTful规范
+
+###应用所需路由
+###登录
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123456"
+}
+
+### 获取列表 
+GET http://localhost:3000/notes/?orderBy=created_at&pageNum=1&pageSize=10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjg0NTgzNzgxfQ.XGkfV23Qg07_D8_5Q7BsJtBNB71a2ASD4_3AH01QNVw
+
+###创建列表
+
+POST  http://localhost:3000/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjg0NTgzNzgxfQ.XGkfV23Qg07_D8_5Q7BsJtBNB71a2ASD4_3AH01QNVw
+
+ {
+    "title": "机器猫",
+    "description": "万能百宝袋"
+    
+  }
+###更新列表
+PUT http://localhost:3000/notes/12
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjg0NTgzNzgxfQ.XGkfV23Qg07_D8_5Q7BsJtBNB71a2ASD4_3AH01QNVw
+
+  {
+    "title": "光头强",
+    "description": "砍树小能手,人体描边大师",
+    "done": 1
+  }
+###删除列表
+DELETE http://localhost:3000/notes/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjg0NTgzNzgxfQ.XGkfV23Qg07_D8_5Q7BsJtBNB71a2ASD4_3AH01QNVw
+
+
